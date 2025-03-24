@@ -1,0 +1,6 @@
+{
+    "countries": [
+        {"name": "Ukraine", "population": 41000000, "age_distribution": {"0-14": 15, "15-64": 70, "65+": 15}},
+        {"name": "Poland", "population": 38000000, "age_distribution": {"0-14": 16, "15-64": 68, "65+": 16}}
+    ]
+}
