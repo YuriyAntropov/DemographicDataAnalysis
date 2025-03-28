@@ -41,7 +41,7 @@ public slots:
     void onZoomOutClicked();
     void updateZoomSlider(qreal newScale);
     void toggleCompareMode();
-    void showFindCountryDialog(); // Убедимся, что этот слот присутствует
+    void showFindCountryDialog();
 
     void openNewWindow();
 
@@ -70,7 +70,7 @@ private:
     void updateZoomSliderPosition();
     void syncZoomSlider();
     void updateCompareButtonPosition();
-    void updateFindButtonPosition(); // Новая функция для позиционирования кнопки Find
+    void updateFindButtonPosition(); // Функция для позиционирования кнопки Find
     static constexpr qreal INITIAL_SCALE = 5.5; // Начальный масштаб при запуске
 
     MapWidget *mapWidget;
@@ -82,8 +82,8 @@ private:
     QSlider *zoomSlider;
     QPushButton *zoomInButton;
     QPushButton *zoomOutButton;
-    QPushButton *compareButton; // Добавляем кнопку Compare
-    QPushButton *findButton; // Новая кнопка Find
+    QPushButton *compareButton; // Кнопка Compare
+    QPushButton *findButton; // Кнопка Find
     QString lastSelectedCountry;
     bool isStatsVisible = false;
     bool isCompareMode = false;

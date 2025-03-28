@@ -1,7 +1,7 @@
 #ifndef STATSWIDGET_H
 #define STATSWIDGET_H
 
-#include "AbstractWidget.h" // Заменяем QWidget на AbstractWidget
+#include "AbstractWidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QNetworkAccessManager>
@@ -27,7 +27,7 @@ public:
     explicit StatsWidget(MainWindow *mainWindow, QWidget *parent = nullptr);
     ~StatsWidget();
 
-    // Реализация чисто виртуального метода
+    // Реализация виртуального метода
     void updateDisplay() override;
 
 public slots:
@@ -48,9 +48,9 @@ private slots:
     void showAreaComparison();
     void showDensityComparison();
     void sortCountriesByPopulation();
-    void sortCountriesByName(); // Новая функция для сортировки по имени
-    void sortCountriesByArea(); // Новый слот для сортировки по площади
-    void onEditDataClicked(); // Новый слот
+    void sortCountriesByName(); // Функция для сортировки по имени
+    void sortCountriesByArea(); // Слот для сортировки по площади
+    void onEditDataClicked();
 
 private:
     void createComparisonButtons();
@@ -68,10 +68,10 @@ private:
     QHBoxLayout *buttonLayout;
     QTableWidget *countriesTable;
     QPushButton *sortByPopulationButton;
-    QLabel *sortTimeLabel; // Новый QLabel для времени сортировки
-    QPushButton *sortByNameButton; // Новая кнопка для сортировки по имени
-    QPushButton *sortByAreaButton; // Новая кнопка
-    QPushButton *editDataButton; // Новая кнопка
+    QLabel *sortTimeLabel; // QLabel для времени сортировки
+    QPushButton *sortByNameButton; // Кнопка для сортировки по имени
+    QPushButton *sortByAreaButton;
+    QPushButton *editDataButton;
     QString currentCountryCode; // Для хранения кода текущей страны
     QChartView *sortTimeChartView; // Новый график для времени сортировки
 

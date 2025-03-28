@@ -56,7 +56,7 @@ void DemographicsManager::saveToJson(const QString &filePath) const {
         countryObj["timezones"] = timezonesArray;
 
         QJsonObject iddObj;
-        iddObj["root"] = data.phoneCode.left(2); // Примерное разделение, можно улучшить
+        iddObj["root"] = data.phoneCode.left(2); // Примерное разделение
         iddObj["suffixes"] = QJsonArray{data.phoneCode.mid(2)};
         countryObj["idd"] = iddObj;
 
@@ -115,7 +115,7 @@ void DemographicsManager::loadFromJson(const QJsonDocument &doc) {
         QString subregion = country["subregion"].toString("N/A");
         qreal area = country["area"].toDouble(-1.0);
 
-        // Исправляем обработку валют
+        // Обработка валют
         QStringList currencies;
         QJsonObject currenciesObj = country["currencies"].toObject();
         for (const QString &cyCode : currenciesObj.keys()) {

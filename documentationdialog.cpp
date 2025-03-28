@@ -5,8 +5,8 @@
 
 DocumentationDialog::DocumentationDialog(QWidget *parent) : QDialog(parent) {
     setWindowTitle("Documentation");
-    setModal(true); // Делаем окно модальным
-    setMinimumSize(600, 400); // Задаём минимальный размер окна
+    setModal(true); // Делаю окно модальным
+    setMinimumSize(600, 400); // Задаю минимальный размер окна
 
     layout = new QVBoxLayout(this);
 
@@ -20,7 +20,7 @@ DocumentationDialog::DocumentationDialog(QWidget *parent) : QDialog(parent) {
 
     setLayout(layout);
 
-    loadDocumentation(); // Загружаем текст документации
+    loadDocumentation(); // Загружаю текст документации
 }
 
 void DocumentationDialog::loadDocumentation() {

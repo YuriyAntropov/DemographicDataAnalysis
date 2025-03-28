@@ -7,12 +7,12 @@
 #include <QApplication>
 #include <QScreen>
 #include <QMessageBox>
-#include <QProcess> // Добавляем для QProcess
-#include "FindCountryDialog.h" // Добавляем новый заголовок
+#include <QProcess>
+#include "FindCountryDialog.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
-    // Устанавливаем стиль для всего окна
+    // Стиль для всего окна
     setStyleSheet(
         "QMainWindow { background-color: #212121; }"
         "QPushButton { background-color: #424242; color: #E0E0E0; border-radius: 5px; padding: 5px; }"
@@ -74,7 +74,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     connect(leftHalfAction, &QAction::triggered, this, &MainWindow::setLeftHalf);
     connect(rightHalfAction, &QAction::triggered, this, &MainWindow::setRightHalf);
     connect(topHalfAction, &QAction::triggered, this, &MainWindow::setTopHalf);
-    connect(bottomHalfAction, &QAction::triggered, this, &MainWindow::setBottomHalf); // Здесь была опечатка "customHalfAction", исправим ниже
+    connect(bottomHalfAction, &QAction::triggered, this, &MainWindow::setBottomHalf);
     connect(restoreDefaultAction, &QAction::triggered, this, &MainWindow::restoreDefaultWindow);
 
     // Меню "View"
@@ -94,7 +94,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 
     // Меню "Data"
     QMenu *dataMenu = menuBar->addMenu("Data");
-    QAction *refreshAction = dataMenu->addAction("Refresh Data"); // Перенесли сюда
+    QAction *refreshAction = dataMenu->addAction("Refresh Data");
     QAction *showWorldStatsAction = dataMenu->addAction("Show World Stats");
     connect(refreshAction, &QAction::triggered, this, &MainWindow::refreshData); // Подключаем слот
     connect(showWorldStatsAction, &QAction::triggered, this, &MainWindow::showWorldStats);
@@ -155,14 +155,14 @@ void MainWindow::resizeEvent(QResizeEvent *event) {
     updateToggleButtonPosition();
     updateZoomSliderPosition();
     updateCompareButtonPosition();
-    updateFindButtonPosition(); // Добавляем обновление позиции кнопки Find
+    updateFindButtonPosition(); // Обновление позиции кнопки Find
     toggleButton->setFixedHeight(height() / 2);
     mapWidget->fitToWindow();
 }
 
 void MainWindow::closeEvent(QCloseEvent *event) {
     // Можно добавить логику подтверждения выхода
-    event->accept(); // Либо event->ignore(); если хотите предотвратить закрытие
+    event->accept();
 }
 
 void MainWindow::toggleCompareMode() {

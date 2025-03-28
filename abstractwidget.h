@@ -9,11 +9,11 @@ public:
     explicit AbstractWidget(QWidget *parent = nullptr) : QWidget(parent) {}
     virtual ~AbstractWidget() = default;
 
-    // Чисто виртуальный метод, который должны реализовать наследники
+    // Виртуальный метод, который должны реализовать наследники
     virtual void updateDisplay() = 0;
 
 signals:
-         // Можно добавить общие сигналы, если нужно, но для минимального вмешательства оставим пустым
+
 };
 
 #endif // ABSTRACTWIDGET_H

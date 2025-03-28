@@ -1,13 +1,13 @@
 #ifndef MAPWIDGET_H
 #define MAPWIDGET_H
 
-#include "AbstractWidget.h" // Заменяем QWidget на AbstractWidget
+#include "AbstractWidget.h"
 #include <QMap>
 #include <QPointF>
 #include <QList>
 #include <QNetworkReply>
 #include "DemographicsManager.h"
-#include "CustomException.h" // Добавляем заголовок исключений
+#include "CustomException.h" // Заголовок исключений
 
 class InfoBubble;
 
@@ -30,17 +30,17 @@ public:
     void fitToWindow();
     void setScale(qreal newScale, const QPointF &focusPoint);
     qreal getScale() const { return scale; }
-    qreal getMinScale() const { return 5.5; } // Минимальный масштаб теперь 5.5
+    qreal getMinScale() const { return 5.5; } // Минимальный масштаб 5.5
     qreal getMaxScale() const { return 100.0; }
     void clearSelection();
     void setCompareMode(bool enabled);
     QStringList getSelectedCountries() const { return selectedCountries; }
     void showInfoBubble(const QString &countryName, const QPointF &position, qint64 population);
-    void highlightCountry(const QString &countryName, bool zoom = false); // Новый метод
+    void highlightCountry(const QString &countryName, bool zoom = false);
 
     const QMap<QString, QString>& getCountryCodes() const { return countryCodes; }
 
-    // Реализация чисто виртуального метода
+    // Реализация виртуального метода
     void updateDisplay() override;
 
 signals:

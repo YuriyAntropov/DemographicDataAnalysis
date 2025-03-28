@@ -13,28 +13,26 @@ FindCountryDialog::FindCountryDialog(QWidget *parent) : QDialog(parent) {
     findButton = new QPushButton("Find", this);
     layout->addWidget(findButton);
 
-    // Убираем layout->addStretch(), чтобы не было пустого пространства
-
     setLayout(layout);
 
-    // Настраиваем минимальный размер окна
-    int width = 300; // Оставляем ширину как есть
-    int margin = layout->contentsMargins().top() + layout->contentsMargins().bottom(); // Учитываем отступы layout
+    // Настраиваю минимальный размер окна
+    int width = 300; // Оставляю ширину как есть
+    int margin = layout->contentsMargins().top() + layout->contentsMargins().bottom(); // Учитываю отступы layout
     int spacing = layout->spacing(); // Расстояние между виджетами
     int inputHeight = countryInput->sizeHint().height(); // Рекомендуемая высота строки ввода
     int buttonHeight = findButton->sizeHint().height(); // Рекомендуемая высота кнопки
 
     // Вычисляем минимальную высоту окна
-    int totalHeight = inputHeight + spacing + buttonHeight + margin + 10; // Добавляем небольшой запас (10 пикселей)
+    int totalHeight = inputHeight + spacing + buttonHeight + margin + 10; // Добавляю небольшой запас (10 пикселей)
     setFixedSize(width, totalHeight);
 
     connect(findButton, &QPushButton::clicked, this, &FindCountryDialog::onFindButtonClicked);
 }
 
 QString FindCountryDialog::getCountryName() const {
-    return countryInput->text().trimmed(); // Возвращаем введённое название без лишних пробелов
+    return countryInput->text().trimmed(); // Возвращаю введённое название без лишних пробелов
 }
 
 void FindCountryDialog::onFindButtonClicked() {
-    accept(); // Закрываем диалог с кодом принятия
+    accept(); // Закрываю диалог с кодом принятия
 }

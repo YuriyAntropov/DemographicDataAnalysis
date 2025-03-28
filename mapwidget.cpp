@@ -32,7 +32,7 @@ MapWidget::MapWidget(DemographicsManager *demographicsManager, QWidget *parent)
 
 // Реализация чисто виртуального метода
 void MapWidget::updateDisplay() {
-    update(); // Просто вызываем перерисовку виджета
+    update(); // Вызываем перерисовку виджета
 }
 
 void MapWidget::setCountryCodes(const QMap<QString, QString> &codes) {
@@ -113,7 +113,6 @@ QString MapWidget::normalizeCountryName(const QString &name) const {
     if (normalized == "micronesia, federated states of") return "micronesia";
     if (normalized == "brunei darussalam") return "brunei";
     if (normalized == "timor-leste") return "east timor";
-    // Добавляем новые правила для стран из отладки
     if (normalized == "papua new guinea") return "papua new guinea";
     if (normalized == "australia") return "australia";
     if (normalized == "fiji") return "fiji";
@@ -798,7 +797,7 @@ void MapWidget::fitToWindow() {
     }
 
     qreal fitScale = qMin(windowWidth / worldWidth, windowHeight / worldHeight);
-    scale = qBound(5.5, fitScale, getMaxScale()); // Минимальный масштаб 5.5
+    scale = qBound(5.5, fitScale, getMaxScale());
     qDebug() << "Initial scale set to:" << scale << "(fitScale:" << fitScale << ", minScale:" << getMinScale() << ", maxScale:" << getMaxScale() << ")";
 
     panOffset.setX((windowWidth - worldWidth * scale) / 2 - minX * scale);

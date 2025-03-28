@@ -2,7 +2,7 @@
 #define INFOBUBBLE_H
 
 #include <QWidget>
-#include <QPainterPath> // Добавляем подключение QPainterPath
+#include <QPainterPath>
 
 class InfoBubble : public QWidget {
     Q_OBJECT
